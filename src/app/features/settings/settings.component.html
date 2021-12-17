@@ -1,0 +1,63 @@
+<app-action-bar [title]="'Settings'"></app-action-bar>
+
+<GridLayout columns="*" rows="*">
+
+    <ng-container *ngIf="!loading else loadingIndicator">
+
+        <ListView
+            (itemTap)="onItemTap($event)"
+            [items]="settingsItems"
+            [itemTemplateSelector]="itemTemplateSelector"
+            column="0" row="0"
+            class="list-view">
+
+            <!-- template: group -->
+            <ng-template nsTemplateKey="group" let-item="item">
+                <GridLayout columns="*" rows="*"
+                            class="list-view-item -border-top">
+                    <Label [text]="item.name"
+                           col="0" row="0"
+                           class="line -group"></Label>
+                </GridLayout>
+            </ng-template>
+
+            <!-- template: item -->
+            <ng-template nsTemplateKey="item" let-item="item">
+                <GridLayout columns="*" rows="auto, auto"
+                            class="list-view-item">
+                    <Label [text]="item.name"
+                           col="0" row="0"
+                           class="line -primary"></Label>
+                    <Label [text]="item.text"
+                           col="0" row="1"
+                           class="line -secondary"></Label>
+                </GridLayout>
+            </ng-template>
+
+            <!-- template: itemToggle -->
+            <ng-template nsTemplateKey="itemToggle" let-item="item">
+                <GridLayout columns="*, auto" rows="*"
+                            class="list-view-item">
+                    <Label [text]="item.name"
+                           col="0" row="0"
+                           class="line -primary"></Label>
+                    <Switch (checkedChange)="onSwitchChanged($event)"
+                            [checked]="item.checked" [isEnabled]="!item.disabled"
+                            col="1" row="0"
+                            [id]="item.key"
+                            horizontalAlignment="right"></Switch>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+
+    </ng-container>
+
+</GridLayout>
+
+<!-- ---------------------------------------------------------------------- -->
+<!-- templates -->
+
+<!-- loading -->
+<ng-template #loadingIndicator>
+    <MDActivityIndicator busy="true"></MDActivityIndicator>
+</ng-template>

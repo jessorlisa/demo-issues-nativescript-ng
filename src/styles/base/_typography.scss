@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains app-wide typography rules
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Font icon classes based on Material Design Icons (@see https://material.io/resources/icons/)
+// -----------------------------------------------------------------------------
+
+.m-icon {
+  font-family: 'Material Icons', MaterialIcons-Regular;
+  font-weight: 400;
+  font-size: 24; // preferred icon size
+
+  &.-tiny {
+    font-size: 8;
+  }
+}

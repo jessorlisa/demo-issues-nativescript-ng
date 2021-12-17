@@ -1,0 +1,54 @@
+<app-action-bar [title]="'Tabs'"></app-action-bar>
+
+<MDTabs selectedIndex="0">
+    <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
+    <MDTabStrip>
+        <MDTabStripItem>
+            <Label text="RadListView"></Label>
+            <Image class="m-icon" src="font://&#xf092;"></Image>
+        </MDTabStripItem>
+        <MDTabStripItem>
+            <Label text="Tab 2"></Label>
+            <Image class="m-icon" src="font://&#xe88e;"></Image>
+        </MDTabStripItem>
+        <MDTabStripItem>
+            <Label text="Tab 3"></Label>
+            <Image class="m-icon" src="font://&#xe88e;"></Image>
+        </MDTabStripItem>
+    </MDTabStrip>
+
+    <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
+    <MDTabContentItem>
+        <GridLayout>
+            <RadListView [items]="dataItems" row="1" #myListView [groupingFunction]="myGroupingFunc">
+                <ng-template tkListItemTemplate let-item="item">
+                    <StackLayout>
+                        <Label class="name-label" [text]="item ? item.name : '?'"></Label>
+                        <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+                    </StackLayout>
+                </ng-template>
+                <ng-template tkGroupTemplate let-category="category">
+                    <GridLayout ios:height="50">
+                        <Label [text]="category" class="group-label"></Label>
+                    </GridLayout>
+                </ng-template>
+                <ng-template tkListViewHeader>
+                    <Label text="RadListView header" class="header"></Label>
+                </ng-template>
+                <ng-template tkListViewFooter>
+                    <Label text="RadListView footer" class="footer"></Label>
+                </ng-template>
+            </RadListView>
+        </GridLayout>
+    </MDTabContentItem>
+    <MDTabContentItem>
+        <GridLayout>
+            <Label text="2nd tab" class="h2 text-center p-15"></Label>
+        </GridLayout>
+    </MDTabContentItem>
+    <MDTabContentItem>
+        <GridLayout>
+            <Label text="3rd tab" class="h2 text-center p-15"></Label>
+        </GridLayout>
+    </MDTabContentItem>
+</MDTabs>

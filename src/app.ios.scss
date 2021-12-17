@@ -1,0 +1,5 @@
+@charset 'UTF-8';
+
+// needed as entry point due to current webpack setup
+/* stylelint-disable scss/at-import-partial-extension */
+@import 'styles/app.ios';

@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains NativeScript app styles related to the Material Navigation
+// Drawer component
+// @see
+// - Material 3: https://m3.material.io/components/navigation-drawer/specs
+// -----------------------------------------------------------------------------
+
+.drawer {
+  @include colorize($background-color: white);
+
+  android-elevation: 1;
+  border-radius: 0 16 16 0;
+  height: 100%;
+
+  .hr {
+    margin: 0;
+  }
+}
+
+.drawer__header {
+  @include colorize($background-color: accent);
+
+  border-radius: 0 16 0 0;
+  padding: 12 28;
+
+  .drawer__wrapper-logo {
+    margin: 0 20 0 0;
+  }
+
+  .drawer__wrapper-user {
+    margin-top: 12;
+  }
+}
+
+.drawer__body {
+  padding: 12;
+
+  .drawer__nav-item {
+    border-radius: 28;
+    height: 56;
+    margin: 0;
+    padding: 0 16;
+
+    &.-selected {
+      @include colorize($background-color: item-active-background);
+    }
+  }
+}

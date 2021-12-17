@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains styles related to the ActivityIndicator component
+// @see
+// - https://docs.nativescript.org/ui-and-styling.html#activity-indicator
+// Using the NativeScript Community Plugin
+// - https://github.com/nativescript-community/ui-material-components/tree/master/packages/activityindicator
+// -----------------------------------------------------------------------------
+
+MDActivityIndicator {
+  height: 48;
+  width: 48;
+
+  &.-large {
+    height: 96;
+    width: 96;
+  }
+}

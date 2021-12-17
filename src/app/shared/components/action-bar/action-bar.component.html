@@ -1,0 +1,22 @@
+<ActionBar>
+    <!-- Explicitly hide the NavigationButton to prevent the default one on iOS -->
+    <NavigationButton visibility="collapsed"></NavigationButton>
+
+    <!-- Use the NavigationButton in Android because ActionItems are shown on the right side of the ActionBar -->
+    <NavigationButton (tap)="openDrawer()"
+                      ios:visibility="collapse"
+                      [icon]="'font://' + icons.menu"
+                      class="m-icon -tiny"></NavigationButton>
+
+    <!-- Use the ActionItem for iOS with position set to left. -->
+    <ActionItem (tap)="openDrawer()"
+                android:visibility="collapse"
+                [icon]="'font://' + icons.menu"
+                class="m-icon -tiny"
+                ios.position="left"></ActionItem>
+
+    <!-- Title -->
+    <Label col="0" row="0"
+           [text]="title"
+           class="body" horizontalAlignment="left"></Label>
+</ActionBar>

@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// This file imports all common Android/iOS app Sass files
+// -----------------------------------------------------------------------------
+
+// 1. Configuration and helpers
+@import 'src/styles/abstracts/variables';
+
+// 2. Vendors
+// @import '~@nativescript/theme/index';
+@import '~@nativescript/theme/core';
+@import '~@nativescript/theme/default';
+
+// 3. Base
+@import 'src/styles/base/typography';
+
+// 4. Layout
+
+// 5. Components
+// @import 'components/button';
+@import 'components/activity-indicator';
+@import 'components/drawer';
+@import 'components/list-view';

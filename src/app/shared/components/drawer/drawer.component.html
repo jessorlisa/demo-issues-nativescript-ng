@@ -1,0 +1,69 @@
+<GridLayout columns="*" rows="auto, *"
+            class="drawer" [width]="drawerWidth"
+            horizontalAlignment="left">
+
+    <!-- header -->
+    <StackLayout (swipe)="onSwipe($event)"
+                 col="0" row="0"
+                 class="drawer__header">
+
+        <GridLayout columns="*" rows="auto" orientation="horizontal">
+
+            <StackLayout col="0" row="0"
+                         class="drawer__wrapper-logo">
+                <Image loadMode="async" src="res://logo"></Image>
+            </StackLayout>
+
+        </GridLayout>
+
+        <StackLayout class="drawer__wrapper-user">
+
+            <Label [text]="'Jane Doe'"
+                   class="body"></Label>
+            <Label [text]="'jane.doe@example.org'"
+                   class="body"></Label>
+
+        </StackLayout>
+
+    </StackLayout>
+
+
+    <!-- menu -->
+    <ScrollView col="0" row="1">
+        <StackLayout (swipe)="onSwipe($event)"
+                     class="drawer__body" >
+
+            <ng-container
+                *ngTemplateOutlet="navItem; context: { icon: icons.home, label: 'Home', route: routes.home }"></ng-container>
+            <ng-container
+                *ngTemplateOutlet="navItem; context: { icon: icons.tab, label: 'Tabs', route: routes.tabs }"></ng-container>
+            <ng-container
+                *ngTemplateOutlet="navItem; context: { icon: icons.search, label: 'Search', route: routes.search }"></ng-container>
+
+            <StackLayout class="hr" [width]="drawerDividerWidth"></StackLayout>
+
+            <ng-container
+                *ngTemplateOutlet="navItem; context: { icon: icons.settings, label: 'Settings', route: routes.settings }"></ng-container>
+
+        </StackLayout>
+    </ScrollView>
+
+</GridLayout>
+
+<!-- templates -->
+<ng-template #navItem
+             let-icon="icon"
+             let-label="label"
+             let-route="route">
+    <GridLayout (tap)="onNavItemTap(route)"
+                columns="24, 12, *" rows="56"
+                class="drawer__nav-item"
+                [class.-selected]="isCurrentRoute(route)">
+        <Label [text]="icon"
+               col="0" row="0"
+               class="m-icon" verticalAlignment="center"></Label>
+        <Label [text]="label"
+               col="2" row="0"
+               class="body" verticalAlignment="center"></Label>
+    </GridLayout>
+</ng-template>

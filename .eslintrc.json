@@ -1,0 +1,188 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.eslint.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/ng-cli-compat",
+        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:@nativescript/recommended"
+      ],
+      "plugins": [
+        "eslint-plugin-unicorn",
+        "@nativescript"
+      ],
+      "rules": {
+        "@typescript-eslint/array-type": [
+          "error",
+          {
+            "default": "array"
+          }
+        ],
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true
+          }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "no-public"
+          }
+        ],
+        "@typescript-eslint/member-ordering": "off",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "enumMember",
+            "format": [
+              "UPPER_CASE",
+              "PascalCase"
+            ]
+          }
+        ],
+        "no-duplicate-imports": "off",
+        "@typescript-eslint/no-duplicate-imports": [
+          "error"
+        ],
+        "@typescript-eslint/no-var-requires": "error",
+        "brace-style": [
+          "error",
+          "1tbs"
+        ],
+        "id-blacklist": "off",
+        "id-match": "off",
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "index",
+              "internal"
+            ],
+            "pathGroups": [
+              {
+                "pattern": "@angular/core",
+                "group": "external",
+                "position": "before"
+              },
+              {
+                "pattern": "@angular/**",
+                "group": "external",
+                "position": "before"
+              },
+              {
+                "pattern": "@nativescript/core",
+                "group": "external",
+                "position": "before"
+              },
+              {
+                "pattern": "@nativescript/**",
+                "group": "external",
+                "position": "before"
+              },
+              {
+                "pattern": "@nativescript-community/**",
+                "group": "external",
+                "position": "before"
+              },
+              {
+                "pattern": "@src/app/*",
+                "group": "internal",
+                "position": "after"
+              },
+              {
+                "pattern": "@src/app/core/**",
+                "group": "internal",
+                "position": "after"
+              },
+              {
+                "pattern": "@src/app/features/**",
+                "group": "internal",
+                "position": "after"
+              },
+              {
+                "pattern": "@src/app/services/**",
+                "group": "internal",
+                "position": "after"
+              },
+              {
+                "pattern": "@src/app/shared/**",
+                "group": "internal",
+                "position": "after"
+              },
+              {
+                "pattern": "@src/environments/**",
+                "group": "internal",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": [
+              "builtin"
+            ],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "linebreak-style": [
+          "error",
+          "unix"
+        ],
+        "max-len": [
+          "error",
+          {
+            "code": 240
+          }
+        ],
+        "no-shadow": "off",
+        "no-underscore-dangle": "off",
+        "object-shorthand": "off",
+        "quote-props": [
+          "error",
+          "consistent-as-needed"
+        ],
+        "sort-imports": [
+          "error",
+          {
+            "ignoreCase": true,
+            "ignoreDeclarationSort": true
+          }
+        ],
+        "unicorn/filename-case": [
+          "error",
+          {
+            "case": "kebabCase"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}
