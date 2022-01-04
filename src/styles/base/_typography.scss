@@ -11,6 +11,18 @@
   font-weight: 400;
   font-size: 24; // preferred icon size
 
+  &.-huge {
+    font-size: 72;
+  }
+
+  &.-large {
+    font-size: 34;
+  }
+
+  &.-small {
+    font-size: 18;
+  }
+
   &.-tiny {
     font-size: 8;
   }

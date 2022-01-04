@@ -21,14 +21,16 @@
   @include colorize($background-color: accent);
 
   border-radius: 0 16 0 0;
-  padding: 12 28;
+  padding: 12 28 12 0;
 
   .drawer__wrapper-logo {
-    margin: 0 20 0 0;
+    margin: 0;
+    padding-left: 28;
   }
 
   .drawer__wrapper-user {
-    margin-top: 12;
+    margin: 0;
+    padding-left: 28;
   }
 }
 

@@ -7,14 +7,11 @@
                  col="0" row="0"
                  class="drawer__header">
 
-        <GridLayout columns="*" rows="auto" orientation="horizontal">
-
-            <StackLayout col="0" row="0"
-                         class="drawer__wrapper-logo">
-                <Image loadMode="async" src="res://logo"></Image>
-            </StackLayout>
-
-        </GridLayout>
+        <StackLayout class="drawer__wrapper-logo">
+            <Label [text]="icons.account_circle"
+                   col="0" row="0"
+                   class="m-icon -huge" verticalAlignment="center"></Label>
+        </StackLayout>
 
         <StackLayout class="drawer__wrapper-user">
 

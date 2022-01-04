@@ -1,8 +1,8 @@
 <app-action-bar [title]="'Search'"></app-action-bar>
 
 <GridLayout rows="auto, *">
-    <StackLayout orientation="horizontal" horizontalAlignment="center">
-        <Button [text]="isEnabled ? 'Disable grouping' : 'Enable grouping'" (tap)="toggleGrouping()" class="p-x-10"></Button>
+    <StackLayout>
+        <Button [text]="isEnabled ? 'Disable grouping' : 'Enable grouping'" (tap)="toggleGrouping()" class="-primary"></Button>
     </StackLayout>
     <RadListView [items]="dataItems" row="1" #myListView [groupingFunction]="myGroupingFunc">
         <ng-template tkListItemTemplate let-item="item">

@@ -25,26 +25,16 @@ import { DataItemService } from '@src/app/core/services/data-item/data-item.serv
 export class TabsComponent implements OnInit {
 
     private _dataItems: ObservableArray<DataItem>;
-    private _isEnabled: boolean;
     private _myGroupingFunc: (item: any) => any;
 
     @ViewChild('myListView', {read: RadListViewComponent}) myListViewComponent: RadListViewComponent;
 
     constructor(private _dataItemService: DataItemService) {
         this.myGroupingFunc = (item: DataItem) => item.category;
-        this.isEnabled = true;
     }
 
     get dataItems(): ObservableArray<DataItem> {
         return this._dataItems;
-    }
-
-    get isEnabled(): boolean {
-        return this._isEnabled;
-    }
-
-    set isEnabled(value: boolean) {
-        this._isEnabled = value;
     }
 
     get myGroupingFunc(): (item: any) => any {

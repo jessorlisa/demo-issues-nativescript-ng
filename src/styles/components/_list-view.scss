@@ -54,16 +54,19 @@
 
 .group-label {
   @include colorize($background-color: accent);
+
   padding: 15;
 }
 
 .header {
   @include colorize($background-color: primary, $color: white);
+
   font-size: 30;
   padding: 15;
 }
 
 .footer {
   @include colorize($background-color: primary, $color: white);
+
   padding: 15;
 }

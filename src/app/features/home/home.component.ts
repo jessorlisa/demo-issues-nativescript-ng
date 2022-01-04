@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { RouterExtensions } from '@nativescript/angular';
+
+import { Routes } from '@src/app/core/constants/routes';
+
 /**
  * HomeComponent
  *
@@ -10,10 +14,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+    readonly routes = Routes;
+
     /**
      *
      */
-    constructor() {
+    constructor(
+        private routerExtensions: RouterExtensions,
+    ) {
         // Use the component constructor to inject providers.
     }
 
@@ -22,5 +30,15 @@ export class HomeComponent implements OnInit {
      */
     ngOnInit(): void {
         // Init your component properties here.
+    }
+
+
+    /**
+     *
+     * @param route
+     */
+    onButtonTap(route: string): void {
+
+        this.routerExtensions.navigate([route]);
     }
 }
