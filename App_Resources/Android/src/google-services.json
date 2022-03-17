@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "283185316864",
+    "project_id": "demoissuesnativescriptng",
+    "storage_bucket": "demoissuesnativescriptng.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283185316864:android:9c600790a37471a792c4e5",
+        "android_client_info": {
+          "package_name": "dev.jessorlisa.demoissuesnativescriptng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283185316864-al9fngvb7gt20i8fgcvcc20nv05akak8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIyUgZ6mCvpPC-Tj3v0ByCBJTKeIjikVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283185316864-al9fngvb7gt20i8fgcvcc20nv05akak8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
