@@ -3,6 +3,6 @@
   "extends": "./tsconfig.json",
   "include": [
     "src/**/*.html",
-    "src/**/*.ts"
+    "src/**/*.ts",
   ]
 }
