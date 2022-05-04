@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SettingsService } from '@src/app/core/services/settings/settings.service';
+
 export interface ListItem {
     checked?: boolean;
     disabled?: boolean;
@@ -27,7 +29,7 @@ export class SettingsComponent implements OnInit {
     /**
      *
      */
-    constructor() {
+    constructor(private settingsService: SettingsService) {
 
     }
 
@@ -35,11 +37,14 @@ export class SettingsComponent implements OnInit {
      *
      */
     ngOnInit(): void {
-        setTimeout(() => {
-            this.loading = false;
 
-            this.initSettingsItems();
-        }, 1000); // mimic some loading from remote
+        this.settingsService.load()
+            .finally(() => {
+
+                this.loading = false;
+
+                this.initSettingsItems();
+            });
     }
 
     /**
