@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-    id: 'dev.jessorlisa.demoissuesn8ng12',
+    id: 'dev.jessorlisa.demoissuesnativescriptng',
     appPath: 'src',
     appResourcesPath: 'App_Resources',
     android: {
