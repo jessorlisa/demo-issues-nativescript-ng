@@ -15,12 +15,12 @@ Demo project source for issues related to NativeScript (Angular flavour)
 - iOS Runtime: `@nativescript/ios@6.5.5` (JSC!)
 - Angular: `@angular/core@13.2.5`
 - Plugin(s):
-  `├── @nativescript/firebase-core@1.2.2`
-  `├── @nativescript/firebase-messaging@1.2.2`
+  `├── @nativescript/firebase-core@2.0.0`
+  `├── @nativescript/firebase-messaging@2.0.0`
 
 ## Setup
 
-- `npm -g install @nativescript@8.2.2`
+- `npm -g install nativescript@8.2.2`
 - Clone the demo project
 - Check out the issue related branch (if available)
 - `npm run clean`
