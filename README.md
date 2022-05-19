@@ -27,6 +27,10 @@ Demo project source for issues related to NativeScript (Angular flavour)
 - Run the project:
     - `npm run android` / `npm run ios`
 
+## Update
+**2022-05-19**: Issue resolved by latest plugin version `@nativescript/firebase-messaging@2.0.0` and changing some wiring.
+More details can be found [here](https://github.com/NativeScript/firebase/issues/77#issuecomment-1131649976).
+
 
 ## Issue Description
 
