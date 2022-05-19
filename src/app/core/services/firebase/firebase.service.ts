@@ -14,33 +14,43 @@ export class FirebaseService {
      *
      */
     constructor() {
+    }
 
-        const messaging = firebase().messaging();
+    /**
+     *
+     */
+    init(): Promise<any> {
 
-        messaging.onToken((token) => {
-            console.log('Firebase onToken', token);
-            this.showAlertDialog('Firebase onToken');
-        });
+        return new Promise((resolve, reject) => {
 
-        messaging.onMessage((message) => {
-            console.log('Firebase onMessage', message);
-            this.showAlertDialog('Firebase onMessage');
-        });
+            const messaging = firebase().messaging();
 
-        messaging.onNotificationTap((message) => {
-            console.log('Firebase onNotificationTap', message);
-            this.showAlertDialog('Firebase onNotificationTap');
-        });
-
-        messaging
-            .getToken()
-            .then((token: string) => {
-                console.log('FCM registration token (please copy): ', token);
-            })
-            .catch((e) => {
-                console.error('Error messaging.getToken() failed');
+            messaging.onToken((token) => {
+                console.log('Firebase onToken', token);
+                this.showAlertDialog('Firebase onToken');
             });
 
+            messaging.onMessage((message) => {
+                console.log('Firebase onMessage', message);
+                this.showAlertDialog('Firebase onMessage');
+            });
+
+            messaging.onNotificationTap((message) => {
+                console.log('Firebase onNotificationTap', message);
+                this.showAlertDialog('Firebase onNotificationTap');
+            });
+
+            messaging
+                .getToken()
+                .then((token: string) => {
+                    console.log('FCM registration token (please copy): ', token);
+                })
+                .catch((e) => {
+                    console.error('Error messaging.getToken() failed');
+                });
+
+            resolve(null);
+        });
     }
 
     /**
