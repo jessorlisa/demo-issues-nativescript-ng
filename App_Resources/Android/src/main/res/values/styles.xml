@@ -2,7 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- theme to use FOR launch screen-->
-    <style name="LaunchScreenThemeBase" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+    <style name="LaunchScreenThemeBase" parent="Theme.SplashScreen">
         <item name="toolbarStyle">@style/NativeScriptToolbarStyle</item>
 
         <item name="colorPrimary">@color/ns_primary</item>
@@ -12,6 +12,12 @@
         <item name="android:windowBackground">@drawable/splash_screen</item>
 
         <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- Add transparent colors for the new splash screen elements ( so that the old splash screen will show ) -->
+        <item name="windowSplashScreenBackground">@android:color/transparent</item>
+        <item name="windowSplashScreenAnimatedIcon">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBrandingImage">@android:color/transparent</item>
     </style>
 
     <style name="LaunchScreenTheme" parent="LaunchScreenThemeBase">
