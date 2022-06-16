@@ -20,7 +20,6 @@ import { SharedModule } from '@src/app/shared/shared.module';
  */
 export const initializeAppFactory = (settingsService: SettingsService) => () => settingsService.load();
 
-
 @NgModule({
     bootstrap: [AppComponent],
     imports: [
