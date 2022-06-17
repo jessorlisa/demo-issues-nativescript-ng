@@ -1,4 +1,5 @@
 import { NativeScriptNgZone, platformNativeScript, runNativeScriptAngularApp } from '@nativescript/angular';
+import '@nativescript/local-notifications';
 
 import { ImageCacheIt } from '@triniwiz/nativescript-image-cache-it';
 

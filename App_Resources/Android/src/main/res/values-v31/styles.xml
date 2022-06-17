@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="LaunchScreenTheme" parent="LaunchScreenThemeBase">
+        <!-- Set the splash screen background, animated icon, and animation duration. -->
+        <item name="windowSplashScreenBackground">@color/ns_splash</item>
+
+        <!-- Set the (animated) icon -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ns_anim</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item><!-- (only required for animated icons) -->
+
+        <!-- Set the theme of the Activity that directly follows your splash screen. -->
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
+    </style>
+
+</resources>
