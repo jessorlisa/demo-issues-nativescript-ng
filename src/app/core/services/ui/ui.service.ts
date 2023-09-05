@@ -1,4 +1,4 @@
-import { ComponentRef, Injectable, InjectionToken, Injector } from '@angular/core';
+import { ComponentRef, EmbeddedViewRef, Injectable, InjectionToken, Injector, Type } from '@angular/core';
 
 import {
     CoreTypes,
@@ -9,9 +9,12 @@ import {
 
 import { generateNativeScriptView } from '@nativescript/angular';
 
+import { GenericParamsType } from '@src/app/core/services/ui/interfaces/generic-params-type.interface';
+import { ViewWithNgRef } from '@src/app/core/services/ui/types/view-with-ng-ref.type';
+
 import { DrawerComponent } from '@src/app/shared/components/drawer/drawer.component';
 
-export const GenericParams = new InjectionToken<any>('RootLayoutGenericParams');
+export const GenericParams = new InjectionToken<GenericParamsType>('RootLayoutGenericParams');
 
 export const DEFAULT_ANIMATION_CURVE = CoreTypes.AnimationCurve.cubicBezier(0.17, 0.89, 0.24, 1);
 
@@ -21,9 +24,9 @@ export const DEFAULT_ANIMATION_CURVE = CoreTypes.AnimationCurve.cubicBezier(0.17
 })
 export class UIService {
 
-    private drawer;
-    private drawerWidth = 360;
-    private drawerDividerWidth = this.drawerWidth - 2 * 28;
+    private drawer!: ViewWithNgRef;
+    private drawerWidth: number = 360;
+    private drawerDividerWidth: number = this.drawerWidth - 2 * 28;
     private shadeCoverOpacity = 0.4;
 
     /**
@@ -33,7 +36,6 @@ export class UIService {
     constructor(
         private injector: Injector,
     ) {
-
         this.drawerWidth = Math.round(Math.min(0.8 * this.getMinDIPs(), this.drawerWidth));
         this.drawerDividerWidth = this.drawerWidth - 2 * 28;
     }
@@ -141,8 +143,7 @@ export class UIService {
      * @param component
      * @param input
      */
-    getView(component, input?: any): Promise<View> {
-
+    getView<T>(component: Type<T>, input?: GenericParamsType): Promise<ViewWithNgRef> {
         return new Promise((resolve) => {
             const injector = Injector.create({
                 providers: [{provide: GenericParams, useValue: input}],
@@ -151,8 +152,9 @@ export class UIService {
             const cmpRef = generateNativeScriptView(component, {
                 injector,
             });
-            (cmpRef.firstNativeLikeView as any).__ngRef = cmpRef.ref;
-            resolve(cmpRef.firstNativeLikeView);
+            const viewWithNgRef = cmpRef.firstNativeLikeView as ViewWithNgRef;
+            viewWithNgRef.__ngRef = cmpRef.ref as ComponentRef<View> | EmbeddedViewRef<View>;
+            resolve(viewWithNgRef);
         });
     }
 
@@ -160,9 +162,11 @@ export class UIService {
      *
      * @param view
      */
-    destroyNgRef(view: View): void {
-        if ((view as any).__ngRef) {
-            ((view as any).__ngRef as ComponentRef<View>).destroy();
+    destroyNgRef(view: ViewWithNgRef): void {
+        if (view.__ngRef) {
+            if (view.__ngRef instanceof ComponentRef) {
+                view.__ngRef.destroy();
+            }
         }
     }
 

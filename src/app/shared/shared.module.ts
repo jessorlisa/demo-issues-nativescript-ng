@@ -2,10 +2,8 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { NativeDialogModule, NativeScriptCommonModule, NativeScriptFormsModule } from '@nativescript/angular';
 
-import { NativeScriptMaterialActivityIndicatorModule } from '@nativescript-community/ui-material-activityindicator/angular';
 import { NativeScriptMaterialTabsModule } from '@nativescript-community/ui-material-tabs/angular';
 
-import { WebViewExtModule } from '@nota/nativescript-webview-ext/angular';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 
 import { ActionBarComponent } from '@src/app/shared/components/action-bar/action-bar.component';
@@ -16,22 +14,19 @@ const COMPONENTS = [
     DrawerComponent,
 ];
 
-const PIPES = [
-];
+// const PIPES = [];
 
 @NgModule({
     imports: [
         NativeDialogModule,
         NativeScriptCommonModule,
         NativeScriptFormsModule,
-        NativeScriptMaterialActivityIndicatorModule,
         NativeScriptMaterialTabsModule,
-        NativeScriptUIListViewModule,
-        WebViewExtModule
+        NativeScriptUIListViewModule
     ],
     declarations: [
         ...COMPONENTS,
-        ...PIPES
+        // ...PIPES
     ],
     exports: [
         // external
@@ -39,10 +34,9 @@ const PIPES = [
         NativeScriptCommonModule,
         NativeScriptFormsModule,
         NativeScriptUIListViewModule,
-        WebViewExtModule,
         // internal
         ...COMPONENTS,
-        ...PIPES
+        // ...PIPES
     ],
     schemas: [
         NO_ERRORS_SCHEMA

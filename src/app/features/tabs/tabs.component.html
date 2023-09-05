@@ -4,7 +4,7 @@
     <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
     <MDTabStrip>
         <MDTabStripItem>
-            <Label text="RadListView"></Label>
+            <Label text="CollectionView"></Label>
             <Image class="m-icon" src="font://&#xf092;"></Image>
         </MDTabStripItem>
         <MDTabStripItem>
@@ -20,25 +20,19 @@
     <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
     <MDTabContentItem>
         <GridLayout>
-            <RadListView [items]="dataItems" row="1" #myListView [groupingFunction]="myGroupingFunc">
-                <ng-template tkListItemTemplate let-item="item">
-                    <StackLayout>
-                        <Label class="name-label" [text]="item ? item.name : '?'"></Label>
-                        <Label class="description-label" [text]="item ? item.description : '?'"></Label>
-                    </StackLayout>
+            <CollectionView [items]="dataItems"
+                            height="100%"
+                            col="0" row="0">
+                <ng-template let-item="item">
+                    <ContentView>
+                        <StackLayout class="list-card">
+                            <Label class="name-label" [text]="item ? item.name : '?'"></Label>
+                            <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+                        </StackLayout>
+                    </ContentView>
                 </ng-template>
-                <ng-template tkGroupTemplate let-category="category">
-                    <GridLayout ios:height="50">
-                        <Label [text]="category" class="group-label"></Label>
-                    </GridLayout>
-                </ng-template>
-                <ng-template tkListViewHeader>
-                    <Label text="RadListView header" class="header"></Label>
-                </ng-template>
-                <ng-template tkListViewFooter>
-                    <Label text="RadListView footer" class="footer"></Label>
-                </ng-template>
-            </RadListView>
+
+            </CollectionView>
         </GridLayout>
     </MDTabContentItem>
     <MDTabContentItem>

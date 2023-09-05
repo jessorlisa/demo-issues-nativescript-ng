@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Icons } from '@src/app/core/constants/icons';
 import { UIService } from '@src/app/core/services/ui/ui.service';
@@ -7,12 +7,12 @@ import { UIService } from '@src/app/core/services/ui/ui.service';
     selector: 'app-action-bar',
     templateUrl: './action-bar.component.html'
 })
-export class ActionBarComponent implements OnInit {
+export class ActionBarComponent {
 
     readonly icons = Icons;
 
     @Input()
-    title: string;
+    title!: string;
 
     /**
      * ************************************************************************
@@ -26,12 +26,6 @@ export class ActionBarComponent implements OnInit {
     constructor(
         private uiService: UIService,
     ) {
-    }
-
-    /**
-     *
-     */
-    ngOnInit(): void {
     }
 
     /**

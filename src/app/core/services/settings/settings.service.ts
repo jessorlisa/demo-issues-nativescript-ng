@@ -17,9 +17,9 @@ export class SettingsService {
      * Load settings
      *
      */
-    load(): Promise<any> {
+    load(): Promise<null> {
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
 
             if (this.loading) {
                 resolve(null);
