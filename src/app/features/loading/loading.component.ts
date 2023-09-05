@@ -4,4 +4,5 @@ import { Component } from '@angular/core';
     selector: 'app-loading',
     templateUrl: 'loading.component.html'
 })
-export class LoadingComponent {}
+export class LoadingComponent {
+}

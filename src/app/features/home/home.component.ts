@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { RouterExtensions } from '@nativescript/angular';
 
@@ -12,7 +12,7 @@ import { Routes } from '@src/app/core/constants/routes';
     selector: 'app-home',
     templateUrl: './home.component.html'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
     readonly routes = Routes;
 
@@ -23,13 +23,6 @@ export class HomeComponent implements OnInit {
         private routerExtensions: RouterExtensions,
     ) {
         // Use the component constructor to inject providers.
-    }
-
-    /**
-     *
-     */
-    ngOnInit(): void {
-        // Init your component properties here.
     }
 
 

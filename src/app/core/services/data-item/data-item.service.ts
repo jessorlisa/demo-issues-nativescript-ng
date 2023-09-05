@@ -14,11 +14,11 @@ const generateItems = (): DataItem[] => {
             i,
             i % SPECIAL_ITEM_INTERVAL === 0 ? `Special Item ${i}` : `Item ${i}`,
             `This is an item, category is: Category ${i % GROUPS_COUNT}`,
-            null,
-            null,
-            null,
+            '',
+            '',
+            '',
             false,
-            null,
+            '',
             `Category ${i % GROUPS_COUNT}`
         ));
     }

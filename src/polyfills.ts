@@ -13,6 +13,9 @@ import '@nativescript/angular/polyfills';
 // Add pre-zone.js patches needed for the NativeScript platform
 import '@nativescript/zone-js/dist/pre-zone-polyfills';
 
+// Add websocket package
+import '@valor/nativescript-websockets';
+
 // Zone JS is required by default for Angular itself
 import 'zone.js';
 

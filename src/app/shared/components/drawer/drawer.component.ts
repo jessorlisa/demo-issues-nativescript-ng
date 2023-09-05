@@ -41,12 +41,14 @@ export class DrawerComponent {
      *
      * @param args
      */
-    onSwipe(args: SwipeGestureEventData): void {
+    onSwipe(args: Event): void {
 
-        if (args.direction === SwipeDirection.left) {
+        const nativeScriptEvent = args as unknown as SwipeGestureEventData;
+
+        if (nativeScriptEvent.direction === SwipeDirection.left) {
             this.uiService.closeDrawer();
-        } else if (args.direction === SwipeDirection.right) {
-            // some fancy bouncing effect?
+        } else if (nativeScriptEvent.direction === SwipeDirection.right) {
+            // nice to have: some fancy bouncing effect?
         }
     }
 

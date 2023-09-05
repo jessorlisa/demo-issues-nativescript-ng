@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { EventData, ItemEventData, Switch } from '@nativescript/core';
+
 import { SettingsService } from '@src/app/core/services/settings/settings.service';
 
 export interface ListItem {
@@ -22,7 +24,7 @@ export interface ListItem {
 })
 export class SettingsComponent implements OnInit {
 
-    settingsItems: ListItem[];
+    settingsItems!: ListItem[];
 
     loading = true;
 
@@ -133,16 +135,17 @@ export class SettingsComponent implements OnInit {
      * @param item
      */
     itemTemplateSelector(item: ListItem): string {
-        return item.template;
+        return item.template || 'item';
     }
 
     /**
      *
      * @param args
      */
-    onItemTap(args: any): void {
+    onItemTap(args: Event): void {
 
-        const item = this.settingsItems[args.index];
+        const nativeScriptEvent = args as unknown as ItemEventData;
+        const item = this.settingsItems[nativeScriptEvent.index];
         if (item.template === 'group' || item.template === 'itemToggle') {
             return;
         }
@@ -164,9 +167,11 @@ export class SettingsComponent implements OnInit {
      *
      * @param args
      */
-    onSwitchChanged(args: any): void {
+    onSwitchChanged(args: Event): void {
 
-        const switchId = args.object.id;
+        const nativeScriptEvent = args as unknown as EventData;
+        const switchControl = nativeScriptEvent.object as Switch;
+        const switchId = switchControl.id;
         if (switchId) {
             // @todo if required for issue reproduction
         }

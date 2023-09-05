@@ -28,7 +28,7 @@
     <!-- menu -->
     <ScrollView col="0" row="1">
         <StackLayout (swipe)="onSwipe($event)"
-                     class="drawer__body" >
+                     class="drawer__body">
 
             <ng-container
                 *ngTemplateOutlet="navItem; context: { icon: icons.home, label: 'Home', route: routes.home }"></ng-container>

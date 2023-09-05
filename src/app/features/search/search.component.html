@@ -1,26 +1,19 @@
 <app-action-bar [title]="'Search'"></app-action-bar>
 
-<GridLayout rows="auto, *">
-    <StackLayout>
-        <Button [text]="isEnabled ? 'Disable grouping' : 'Enable grouping'" (tap)="toggleGrouping()" class="-primary"></Button>
-    </StackLayout>
-    <RadListView [items]="dataItems" row="1" #myListView [groupingFunction]="myGroupingFunc">
-        <ng-template tkListItemTemplate let-item="item">
-            <StackLayout>
-                <Label class="name-label" [text]="item ? item.name : '?'"></Label>
-                <Label class="description-label" [text]="item ? item.description : '?'"></Label>
-            </StackLayout>
+<GridLayout columns="*" rows="*">
+
+    <CollectionView [items]="dataItems"
+                    height="100%"
+                    col="0" row="0">
+        <ng-template let-item="item">
+            <ContentView>
+                <StackLayout class="list-card">
+                    <Label class="name-label" [text]="item ? item.name : '?'"></Label>
+                    <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+                </StackLayout>
+            </ContentView>
         </ng-template>
-        <ng-template tkGroupTemplate let-category="category">
-            <GridLayout ios:height="50">
-                <Label [text]="category" class="group-label"></Label>
-            </GridLayout>
-        </ng-template>
-        <ng-template tkListViewHeader>
-            <Label text="RadListView header" class="header"></Label>
-        </ng-template>
-        <ng-template tkListViewFooter>
-            <Label text="RadListView footer" class="footer"></Label>
-        </ng-template>
-    </RadListView>
+
+    </CollectionView>
+
 </GridLayout>
