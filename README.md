@@ -7,13 +7,13 @@ Demo project source for issues related to NativeScript (Angular flavour)
 - Node.js: v18.16.0
 - Android SDK: 33
 - JDK 11
-- Xcode: 14.3
-- CocoaPods 1.12.1
+- Xcode: 15.0
+- CocoaPods 1.13.0
 - CLI: `nativescript@8.5.3`
 - Cross-platform modules: `@nativescript/core@8.5.9`
-- Android Runtime: `@nativescript/android@8.5.1`
+- Android Runtime: `@nativescript/android@8.5.2`
 - iOS Runtime: `@nativescript/ios@8.5.2`
-- Angular: `@angular/core@16.1.6`
+- Angular: `@angular/core@16.2.4`
 
 ## Setup
 
