@@ -4,8 +4,6 @@ import { NativeDialogModule, NativeScriptCommonModule, NativeScriptFormsModule }
 
 import { NativeScriptMaterialTabsModule } from '@nativescript-community/ui-material-tabs/angular';
 
-import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
-
 import { ActionBarComponent } from '@src/app/shared/components/action-bar/action-bar.component';
 import { DrawerComponent } from '@src/app/shared/components/drawer/drawer.component';
 
@@ -21,19 +19,17 @@ const COMPONENTS = [
         NativeDialogModule,
         NativeScriptCommonModule,
         NativeScriptFormsModule,
-        NativeScriptMaterialTabsModule,
-        NativeScriptUIListViewModule
+        NativeScriptMaterialTabsModule
     ],
     declarations: [
         ...COMPONENTS,
         // ...PIPES
     ],
     exports: [
-        // external
+        // external,
         NativeDialogModule,
         NativeScriptCommonModule,
         NativeScriptFormsModule,
-        NativeScriptUIListViewModule,
         // internal
         ...COMPONENTS,
         // ...PIPES

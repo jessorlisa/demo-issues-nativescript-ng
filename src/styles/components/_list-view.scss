@@ -51,6 +51,10 @@
 
 .name-label {
   font-size: 20;
+
+  &.-bold {
+    font-weight: bold;
+  }
 }
 
 .description-label {
