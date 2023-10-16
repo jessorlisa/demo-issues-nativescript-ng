@@ -29,6 +29,14 @@
                     </StackLayout>
                 </ContentView>
             </ng-template>
+            <ng-template cvTemplateKey="debugging-bold" let-item="item">
+                <ContentView>
+                    <StackLayout class="list-card">
+                        <Label class="name-label -bold" [text]="item ? item.name : '?'"></Label>
+                        <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+                    </StackLayout>
+                </ContentView>
+            </ng-template>
 
         </CollectionView>
     </PullToRefresh>
