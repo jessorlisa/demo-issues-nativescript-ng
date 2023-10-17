@@ -45,8 +45,13 @@
 // -----------------------------------------------------------------------------
 
 .list-card {
+  border-radius: 16;
   margin: 4;
   padding: 6 16;
+
+  &.-gray {
+    background-color: lightgray;
+  }
 }
 
 .name-label {
