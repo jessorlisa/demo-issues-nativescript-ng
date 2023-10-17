@@ -33,14 +33,14 @@
             <ng-container
                 *ngTemplateOutlet="navItem; context: { icon: icons.home, label: 'Home', route: routes.home }"></ng-container>
             <ng-container
-                *ngTemplateOutlet="navItem; context: { icon: icons.tab, label: 'Tabs', route: routes.tabs }"></ng-container>
+                *ngTemplateOutlet="navItem; context: { icon: icons.search, label: 'CollectionView', route: routes.search }"></ng-container>
             <ng-container
-                *ngTemplateOutlet="navItem; context: { icon: icons.search, label: 'Search', route: routes.search }"></ng-container>
+                *ngTemplateOutlet="navItem; context: { icon: icons.tab, label: 'Tabs', route: routes.tabs }"></ng-container>
 
             <StackLayout class="hr" [width]="drawerDividerWidth"></StackLayout>
 
             <ng-container
-                *ngTemplateOutlet="navItem; context: { icon: icons.settings, label: 'Settings', route: routes.settings }"></ng-container>
+                *ngTemplateOutlet="navItem; context: { icon: icons.settings, label: 'ListView', route: routes.settings }"></ng-container>
 
         </StackLayout>
     </ScrollView>

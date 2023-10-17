@@ -45,12 +45,21 @@
 // -----------------------------------------------------------------------------
 
 .list-card {
+  border-radius: 16;
   margin: 4;
   padding: 6 16;
+
+  &.-gray {
+    background-color: lightgray;
+  }
 }
 
 .name-label {
   font-size: 20;
+
+  &.-bold {
+    font-weight: bold;
+  }
 }
 
 .description-label {
