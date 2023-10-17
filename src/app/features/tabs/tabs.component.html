@@ -15,34 +15,40 @@
             <Label text="Tab 3"></Label>
             <Image class="m-icon" src="font://&#xe88e;"></Image>
         </MDTabStripItem>
+        <MDTabStripItem>
+            <Label text="Tab 4"></Label>
+            <Image class="m-icon" src="font://&#xe88e;"></Image>
+        </MDTabStripItem>
+        <MDTabStripItem>
+            <Label text="Tab 5"></Label>
+            <Image class="m-icon" src="font://&#xe88e;"></Image>
+        </MDTabStripItem>
     </MDTabStrip>
 
-    <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
+    <!-- The number of TabContentItem components should correspond to the number of TabStripItem components -->
     <MDTabContentItem>
         <GridLayout>
-            <CollectionView [items]="dataItems"
-                            height="100%"
-                            col="0" row="0">
-                <ng-template let-item="item">
-                    <ContentView>
-                        <StackLayout class="list-card">
-                            <Label class="name-label" [text]="item ? item.name : '?'"></Label>
-                            <Label class="description-label" [text]="item ? item.description : '?'"></Label>
-                        </StackLayout>
-                    </ContentView>
-                </ng-template>
-
-            </CollectionView>
+            <app-item-list [itemPrefix]="'TAB 1 - '"></app-item-list>
         </GridLayout>
     </MDTabContentItem>
     <MDTabContentItem>
         <GridLayout>
-            <Label text="2nd tab" class="h2 text-center p-15"></Label>
+            <app-item-list [itemPrefix]="'TAB 2 - '"></app-item-list>
         </GridLayout>
     </MDTabContentItem>
     <MDTabContentItem>
         <GridLayout>
-            <Label text="3rd tab" class="h2 text-center p-15"></Label>
+            <app-item-list [itemPrefix]="'TAB 3 - '"></app-item-list>
+        </GridLayout>
+    </MDTabContentItem>
+    <MDTabContentItem>
+        <GridLayout>
+            <app-item-list [itemPrefix]="'TAB 4 - '"></app-item-list>
+        </GridLayout>
+    </MDTabContentItem>
+    <MDTabContentItem>
+        <GridLayout>
+            <app-item-list [itemPrefix]="'TAB 5 - '"></app-item-list>
         </GridLayout>
     </MDTabContentItem>
 </MDTabs>

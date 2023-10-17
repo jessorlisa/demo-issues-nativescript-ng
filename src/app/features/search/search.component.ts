@@ -70,6 +70,7 @@ export class SearchComponent implements OnInit {
                 const pullRefresh = args.object;
                 pullRefresh.refreshing = false;
             }
+            console.log('refreshed');
 
         }, 1000);
 

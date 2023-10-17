@@ -1,0 +1,13 @@
+<CollectionView [items]="dataItems"
+                height="100%"
+                col="0" row="0">
+    <ng-template let-item="item">
+        <ContentView>
+            <StackLayout class="list-card">
+                <Label class="name-label" [text]="item ? item.name : '?'"></Label>
+                <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+            </StackLayout>
+        </ContentView>
+    </ng-template>
+
+</CollectionView>
