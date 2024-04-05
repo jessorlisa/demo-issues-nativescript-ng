@@ -1,19 +1,41 @@
-<app-action-bar [title]="'Search'"></app-action-bar>
+<app-action-bar [title]="'CollectionView'"></app-action-bar>
 
 <GridLayout columns="*" rows="*">
 
-    <CollectionView [items]="dataItems"
-                    height="100%"
-                    col="0" row="0">
-        <ng-template let-item="item">
-            <ContentView>
-                <StackLayout class="list-card">
-                    <Label class="name-label" [text]="item ? item.name : '?'"></Label>
-                    <Label class="description-label" [text]="item ? item.description : '?'"></Label>
-                </StackLayout>
-            </ContentView>
-        </ng-template>
+    <PullToRefresh (refresh)="refresh($event)"
+                   col="0" row="0">
+        <CollectionView [items]="dataItems"
+                        [itemTemplateSelector]="itemTemplateSelector"
+                        (loaded)="onCollectionViewLoaded($event)"
+                        layoutStyle="swipe"
+                        height="100%">
+            <ng-template cvTemplateKey="debugging" let-item="item">
+                <ContentView>
+                    <StackLayout class="list-card -gray">
+                        <ng-container
+                            *ngTemplateOutlet="itemTitle; context: { title: item?.name  || '?' }"></ng-container>
+                        <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+                    </StackLayout>
+                </ContentView>
+            </ng-template>
+            <ng-template cvTemplateKey="debugging-bold" let-item="item">
+                <ContentView>
+                    <StackLayout class="list-card -gray">
+                        <Label class="name-label -bold" [text]="item ? item.name : '?'"></Label>
+                        <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+                        <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+                        <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+                        <Label class="description-label" [text]="item ? item.description : '?'"></Label>
+                    </StackLayout>
+                </ContentView>
+            </ng-template>
 
-    </CollectionView>
+        </CollectionView>
+    </PullToRefresh>
 
 </GridLayout>
+
+<!-- list view template partials -->
+<ng-template #itemTitle let-title="title">
+    <Label class="name-label" [text]="title"></Label>
+</ng-template>
