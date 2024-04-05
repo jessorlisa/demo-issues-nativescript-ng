@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "src/main.ts",
   "scripts": {
-    "android": "ns run android --compileSdk 33 --no-hmr",
-    "android:trace": "ns run android --compileSdk 33 --no-hmr --log trace",
-    "android:buildonly": "ns build android --compileSdk 33",
+    "android": "ns run android --compileSdk 34 --no-hmr",
+    "android:trace": "ns run android --compileSdk 34 --no-hmr --log trace",
+    "android:buildonly": "ns build android --compileSdk 34",
     "ios": "ns run ios --no-hmr",
     "ios:trace": "ns run ios --no-hmr --log trace",
     "clean": "npx rimraf hooks node_modules platforms && npm ci",
