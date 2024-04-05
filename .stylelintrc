@@ -9,13 +9,6 @@
                 "ignoreFontFamilies": ["/Material Icons/", "string"]
             }
         ],
-        "indentation": [
-            2,
-            {
-                "ignore": "value",
-                "indentInsideParens": "once-at-root-twice-in-block"
-            }
-        ],
         "property-no-unknown": [
             true,
             {
@@ -73,7 +66,6 @@
                 ]
             }
         ],
-        "string-quotes": "single",
         "value-keyword-case": [
             "lower",
             {
