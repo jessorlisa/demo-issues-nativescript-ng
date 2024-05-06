@@ -26,3 +26,4 @@ typings/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+/.nx/cache/18.3.4-nx.darwin-x64.node
